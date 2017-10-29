@@ -1,3 +1,5 @@
+package ru.sandbox;
+
 import static java.lang.Math.sqrt;
 
 /**
