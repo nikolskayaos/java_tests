@@ -10,13 +10,15 @@ import ru.sandbox.Point;
 public class PointTests {
     @Test
     public void pointDistanceTest(){
-        Point points = new Point(6, 10, 10, 10);
-        Assert.assertEquals(points.distance(), 4.0);
+        Point p1 = new Point(6, 10);
+        Point p2 = new Point(10, 10);
+        Assert.assertEquals(p1.distance(p1.x, p1.y, p2.x, p2.y ), 4.0);
     }
 
     @Test
     public void pointDistanceZeroTest(){
-        Point points = new Point(0, 0, 0, 0);
-        Assert.assertEquals(points.distance(), 0.0);
+        Point p1 = new Point(6, 10);
+        Point p2 = new Point(10, 10);
+        Assert.assertEquals(p1.distance(p1.x, p1.y, p2.x, p2.y ), 4.0);
     }
 }
