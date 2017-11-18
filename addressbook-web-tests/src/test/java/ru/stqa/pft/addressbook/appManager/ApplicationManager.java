@@ -51,4 +51,6 @@ public class ApplicationManager {
     public SessionHelper getSessionHelper() {
         return sessionHelper;
     }
+
+    public void acceptAlert(){wd.switchTo().alert().accept();}
 }

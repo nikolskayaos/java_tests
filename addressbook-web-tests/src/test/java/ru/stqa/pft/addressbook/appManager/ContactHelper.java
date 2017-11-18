@@ -35,14 +35,13 @@ public class ContactHelper extends HelperBase {
         type(By.name("homepage"),contactData.getHomepage());
 
         click(By.xpath("//div[@id='content']/form/select[1]//option[5]"));
-        click(By.xpath("//div[@id='content']/form/select[2]//option[2]"));
+        click(By.xpath("//div[@id='content']/form/select[2]//option[4]"));
         type(By.name("byear"), contactData.getByear());
 
         click(By.xpath("//div[@id='content']/form/select[3]//option[4]"));
         click(By.xpath("//div[@id='content']/form/select[4]//option[4]"));
         type(By.name("ayear"), contactData.getAyear());
 
-        click(By.xpath("//div[@id='content']/form/select[5]//option[2]"));
 
         type(By.name("address2"), contactData.getAddress2());
         type(By.name("phone2"), contactData.getHomePhone2());
@@ -51,5 +50,19 @@ public class ContactHelper extends HelperBase {
     }
 
 
+    public void selectContact() {
+        click(By.name("selected[]"));
+    }
 
+    public void deleteSelectedContact() {
+        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
+
+    public void initContactModification() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    }
+
+    public void submitContactModification() {
+        click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+    }
 }
