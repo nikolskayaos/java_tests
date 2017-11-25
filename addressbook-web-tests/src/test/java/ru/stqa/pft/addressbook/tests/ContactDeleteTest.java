@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -28,8 +29,13 @@ public class ContactDeleteTest extends TestBase{
                     "+795645123", "test@test.ru", "test@test.ru", "test@test.ru", "test@test.ru",
                     "1995", "1995", "address 2", "123456", "notes", "TestGroup"));
         }
+        int before = app.getContactHelper().getContactCount();
         app.getContactHelper().selectContact();
         app.getContactHelper().deleteSelectedContact();
         app.acceptAlert();
+        app.getNavigationHelper().gotoContactPage();
+        int after = app.getContactHelper().getContactCount();
+
+        Assert.assertEquals(after, before - 1);
     }
 }
